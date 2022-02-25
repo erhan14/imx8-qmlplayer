@@ -25,6 +25,11 @@ public:
         GstElement *audioresample;
         GstElement *volume;
         GstElement *alsasink;
+        GstElement *rtppay;
+        GstElement *parse;
+        GstElement *filter1;
+        GstElement *source;
+        GstElement *queue;
     } CustomData;
 
     CustomData data;
@@ -37,6 +42,7 @@ public:
     int qmlplayer_deinit();
 
     static void pad_added_handler (GstElement *src, GstPad *new_pad, CustomData *data);
+    static void pad_added_handler1 (GstElement *src, GstPad *new_pad, CustomData *data);
 
     void set_qmlobject(QQuickWindow *rootObject);
 

@@ -55,10 +55,15 @@ int main(int argc, char *argv[])
         const QUrl url =
             QUrl::fromUserInput(parser.positionalArguments().constFirst(),
                                 QDir::currentPath(), QUrl::AssumeLocalFile);
+
         qplayer->qmlplayer_init(url);
     } else {
-        g_print("No Input File. Please enter a valid file path as argument.\n");
-        return -1;
+        const QUrl url =
+            //QUrl::fromUserInput("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4");
+        QUrl::fromUserInput("rtsp://192.168.1.3:8554/sample");
+        qplayer->qmlplayer_init(url);
+        //g_print("No Input File. Please enter a valid file path as argument.\n");
+        //return -1;
     }
 
 

@@ -26,3 +26,6 @@ QML_IMPORT_PATH =
 HEADERS += \
     qmlplayer.h \
     setplaying.h
+
+target.path = /root/qmlplayer
+INSTALLS += target
